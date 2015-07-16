@@ -1,0 +1,21 @@
+<ion-view title="Pedido mensajeria">
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-divider">Detalles</ion-item>
+			<ion-item>Usted a pedido: "{{pedido.objetoPedido}}"</ion-item>
+			<ion-item>Pedido status: {{pedido.aceptado === null ? "todavia no" : pedido.aceptado === true ? "Aceptado" : "Rechazado"}}</ion-item>
+		</ion-list>
+		<ion-list>
+			<ion-item class="item-divider">Chat</ion-item>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+			    	<input ng-model="mensaje.txt" type="text" placeholder="Escribi tu mensaje..." >
+			    </label>
+			    <button class="button button-icon button-small icon ion-paper-airplane" ng-click="enviarMensaje(pedido._id)"></button>
+			</div>
+		</ion-list>
+		<ion-list>
+			<ion-item ng-repeat="msg in pedido.chat | orderBy: 'fecha':true" class="item-text-wrap">{{msg.idUser === pedido.usuarioQuePide ? "Yo" : "El"}}: {{msg.mensaje}} </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

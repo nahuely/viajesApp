@@ -1,0 +1,27 @@
+<ion-view title="Viajes">
+	<ion-content>
+		<ion-refresher
+		    pulling-text="Tirar para actualizar..."
+		    on-refresh="refreshViajes()">
+	 	</ion-refresher>
+		<ion-list>
+			<ion-item class="item-icon-right" ng-repeat="viaje in viajes" item="viaje" ui-sref="home.verViajeDetail({id: viaje._id})">
+				<div class="row">
+					<div class="col-33 col-center">
+						<h4>Origen:</h4>
+						<p>{{viaje.origen}}</p>
+					</div>
+					<div class="col-33 col-center">
+						<h4>Destino:</h4>
+						<p>{{viaje.destino}}</p>
+					</div>
+					<div class="col-34 col-center">
+						<h4>Arribo:</h4>
+						<p>{{viaje.fechaLlegada | date:'d/M/yy'}}</p>
+					</div>
+				</div>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

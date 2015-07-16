@@ -1,0 +1,19 @@
+<ion-view title="Viaje detalle">
+	<ion-content>
+		<ion-list>
+			<ion-item>Origen: {{viaje.origen}}</ion-item>
+			<ion-item>Destino: {{viaje.destino}}</ion-item>
+			<ion-item>Fecha de llegada: {{viaje.fechaLlegada | date:'d/M/yy'}}</ion-item>
+			<ion-item>Estadia: {{viaje.tiempoDeEstadia}} dias</ion-item>
+			<ion-item class="item-divider">Tipo del objetos que acepta</ion-item>
+			<ion-item ng-repeat="objeto in viaje.objetosAceptados">{{objeto}}</ion-item>
+			<ion-item class="item-divider">Calificaciones del usuario</ion-item>
+			<!-- <ion-item><rating ng-model="rate" max="max"></rating></ion-item>
+			<ion-item><rating ng-model="rate" max="max"></rating></ion-item>
+			<ion-item><rating ng-model="rate" max="max"></rating></ion-item> -->
+		</ion-list>
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="openModal()">Crear pedido</button>
+		</div>
+	</ion-content>
+</ion-view>

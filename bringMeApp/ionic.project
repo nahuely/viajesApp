@@ -1,0 +1,22 @@
+{
+  "name": "bringMeApp",
+  "app_id": "dc3259a4",
+  "proxies": [
+    {
+      "path": "/api/users/login",
+      "proxyUrl": "http://localhost:3000/api/users/login"
+    },
+    {
+      "path": "/api/users/logout",
+      "proxyUrl": "http://localhost:3000/api/users/logout"
+    },
+    {
+      "path": "/api/viajes/",
+      "proxyUrl": "http://localhost:3000/api/viajes/"
+    },
+    {
+      "path": "/api/pedidos/",
+      "proxyUrl": "http://localhost:3000/api/pedidos/"
+    }
+  ]
+}

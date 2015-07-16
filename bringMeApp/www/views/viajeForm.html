@@ -1,0 +1,28 @@
+<ion-view title="Crear nuevo viaje">
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-divider">Datos Generales</ion-item>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Pais de origen:</span>
+		    	<input ng-model="viaje.origen" type="text" placeholder="Ejemplo: Suiza">
+		  	</label>
+			<label class="item item-input item-stacked-label">
+	    		<span class="input-label">Pais de destino:</span>
+	    		<input ng-model="viaje.destino" type="text" placeholder="Ejemplo: Argentina">
+	  		</label>
+	  		<label class="item item-input item-stacked-label">
+	    		<span class="input-label">Fecha de llegada:</span>
+	    		<input ng-model="viaje.fechaLlegada" type="date" placeholder="2/11/2015">
+	  		</label>
+	  		<label class="item item-input item-stacked-label">
+	    		<span class="input-label">Tiempo de estadia:</span>
+	    		<input ng-model="viaje.tiempoDeEstadia" type="number" placeholder="5 dias">
+	  		</label>
+	  		<ion-item class="item-divider">Puedo llevar</ion-item>
+	  		<ion-checkbox ng-repeat="type in objectTypes" ng-model="type.checked" ng-checked="type.checked">{{type.text}}</ion-checkbox>
+		</ion-list>
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="crearViaje()">Crear viaje</button>
+		</div>
+	</ion-content>
+</ion-view>

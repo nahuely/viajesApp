@@ -1,0 +1,17 @@
+<div class="modal">
+    <ion-header-bar class="bar-balanced">
+    	<h1 class="title">Crear pedido</h1>
+    </ion-header-bar>
+    <ion-content>
+     	<ion-list>
+	        <label class="item item-input item-stacked-label">
+	    		<span class="input-label">Que deseas pedirle?</span>
+	    		<input ng-model="mensaje.text" type="text" placeholder="Ejemplo: Quiero un ipod...">
+	  		</label>
+    	</ion-list>
+    	<div class="padding">
+      		<button class="button button-block button-positive" ng-click="crearPedido()">Enviar consulta</button>    		
+      		<button class="button button-block button-assertive" ng-click="closeModal()">Cancelar</button>    		
+    	</div>
+    </ion-content>
+</div>

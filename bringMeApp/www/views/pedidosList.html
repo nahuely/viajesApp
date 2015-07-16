@@ -1,0 +1,20 @@
+<ion-view title="Mis pedidos">
+	<ion-content>
+		<ion-refresher
+		    pulling-text="Tirar para actualizar..."
+		    on-refresh="refreshPedidos()">
+	 	</ion-refresher>
+		<ion-list>
+			<ion-item class="item-divider">Lo que pido</ion-item>
+			<ion-item ng-if="yoPido.length === 0">No haz realizado ningun pedido</ion-item>
+				<ion-item class="item-icon-right" ng-repeat="pedido in yoPido" ui-sref="home.verPedidoDetail({id: pedido._id})">{{pedido.objetoPedido}} - Status {{pedido.status}}
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+			<ion-item class="item-divider">Lo que me piden</ion-item>
+			<ion-item ng-if="mePiden.length === 0">No te han pedido nada</ion-item>
+				<ion-item class="item-icon-right" ng-repeat="pedido in mePiden" ui-sref="home.verPedidoDetail({id: pedido._id})">{{pedido.objetoPedido}} - Status {{pedido.status}}
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
